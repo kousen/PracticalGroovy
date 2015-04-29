@@ -4,7 +4,7 @@ import groovy.transform.Canonical
 import groovy.transform.Immutable
 import groovy.transform.builder.Builder
 
-import java.time.LocalDate
+import java.text.DateFormat
 
 @Builder
 @Canonical
@@ -13,7 +13,7 @@ class Hero {
     String name
     String company
     String job
-    LocalDate hireDate
+    Date hireDate
 }
 
 Hero hero = Hero
@@ -22,7 +22,7 @@ Hero hero = Hero
         .name('Mr. Incredible')
         .company('InsuraCare')
         .job('Adjuster')
-        .hireDate(LocalDate.of(2015, 4, 23))
+        .hireDate(Date.parse('dd/MMM/yyyy', '29/Apr/2015'))
         .build()
 
 println hero
@@ -36,7 +36,7 @@ hero = Hero
         .secretIdentity('Helen Parr')
         .name('ElastiGirl')
         .job('Domestic Goddess')
-        .hireDate(LocalDate.of(2015, 4, 23))
+        .hireDate(Date.parse('dd/MMM/yyyy', '29/Apr/2015'))
         .build()
 
 println hero

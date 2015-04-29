@@ -9,7 +9,10 @@ public class Bank {
     private Map<Integer, Account> accounts = new HashMap<>();
 
     public Bank(List<Account> accountList) {
-        accountList.stream().forEach(a -> accounts.put(a.getId(), a));
+        //accountList.stream().forEach(a -> accounts.put(a.getId(), a));
+        for (Account a : accountList) {
+            accounts.put(a.getId(), a);
+        }
     }
 
     public double deposit(int id, double amount) {
