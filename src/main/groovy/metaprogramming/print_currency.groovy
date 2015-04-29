@@ -3,7 +3,7 @@ package metaprogramming
 import java.text.NumberFormat;
 
 Number.metaClass.asCurrency = { ->
-    NumberFormat nf = NumberFormat.getCurrencyInstance()
+    NumberFormat nf = NumberFormat.currencyInstance
     nf.format(delegate)
 } 
 
