@@ -9,9 +9,5 @@ class Golfer {
     int score
     int height
 
-    void setHeight(int height) {
-        this.height = -height
-    }
-
-    String toString() { "$score: $last, $first (${height.abs()})" }
+    String toString() { "$score: $last, $first (${height})" }
 }

@@ -16,4 +16,4 @@ def golfers = [
     new Golfer(height: 76, score: 68, last: 'Webb', first: 'Ty'),
     new Golfer(height: 75, score: 70, last: 'Watson', first: 'Bubba')]
 
-golfers.sort().each { println it }
+golfers.sort().reverse().each { println it }
