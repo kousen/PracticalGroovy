@@ -14,7 +14,7 @@ String endPoint = 'https://api.flickr.com/services/rest?'
 def params = [method        : 'flickr.photos.search',
               api_key       : key,
               format        : 'json',
-              tags          : 'kitty',
+              tags          : 'cat',
               nojsoncallback: 1,
               media         : 'photos',
               per_page      : 6]
@@ -33,7 +33,7 @@ println JsonOutput.prettyPrint(jsonTxt)
 def json = new JsonSlurper().parseText(jsonTxt)
 def photos = json.photos.photo
 
-def images = []
+List<byte[]> images = []
 withPool {
     images = photos.collectParallel { p ->
         String url =
